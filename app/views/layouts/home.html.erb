@@ -9,13 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="mt-5">
-  <%= render 'layouts/shared_home/nav' %>
+    <%= render 'layouts/shared_home/nav' %>
     <div class="container">
       <div class="row">
         <%= render 'layouts/shared_home/menu' %>
         <%= yield %>
       </div>
     </div>
-        <%= render 'layouts/shared_home/footer' %>
+    <%= render 'layouts/shared_home/footer' %>
   </body>
 </html>
