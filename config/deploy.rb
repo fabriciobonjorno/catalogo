@@ -20,17 +20,6 @@ set :puma_error_log, "#{shared_path}/log/puma_error.log"
 set :nginx_sites_available_path, "/etc/nginx/sites-available"
 set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
 
-namespace :seed do
-  desc "reload the database with seed data"
-  task :seed do
-    on roles(:all) do
-      within current_path do
-        execute :bundle, :exec, 'rails', 'db:seed', 'RAILS_ENV=production'
-      end
-    end
-  end
-end
-
 namespace :puma do
   desc 'Create Puma dirs'
   task :create_dirs do
