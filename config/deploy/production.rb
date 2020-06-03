@@ -6,7 +6,14 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-server '45.35.104.167', roles: [:web, :app, :db], primary: true, ssh_options: { user: 'deploy' }
+set :branch, 'master'
+set :server_address, '45.35.104.167'
+
+ask(:password, nil, echo: false)
+server fetch(:server_address), user: "deploy", roles: %w{app db web}
+
+set :nginx_server_name, fetch(:server_address)
+set :puma_preload_app, true
 
 
 # role-based syntax
