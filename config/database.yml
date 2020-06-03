@@ -12,7 +12,10 @@ test:
   database: catalog_nestle_test
 
 production:
-  <<: *default
-  database: catalog_nestle_production
+  adapter: postgresql
+  encoding: unicode
+  database: catalogo
+  pool: 5
   username: catalog_nestle
-  password: <%= ENV['CATALOG_NESTLE_DATABASE_PASSWORD'] %>
+  password: 159357
+
