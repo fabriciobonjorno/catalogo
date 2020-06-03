@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 set :branch, 'master'
-set :server_address, 'meucatalogo.art.br'
+set :server_address, '45.35.104.16'
 
 ask(:password, nil, echo: false)
 server fetch(:server_address), user: "deploy", roles: %w{app db web}
