@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_code: 1
+  product_description: MyString
+  product_ean: 1
+  product_dun: 1
+  tax_classification: one
+  group: one
+  family: one
+  status: false
+  releases: false
+  parent_id: 1
+  display_ean: 1
+
+two:
+  product_code: 1
+  product_description: MyString
+  product_ean: 1
+  product_dun: 1
+  tax_classification: two
+  group: two
+  family: two
+  status: false
+  releases: false
+  parent_id: 1
+  display_ean: 1

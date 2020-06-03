@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <h1 class="h3 mb-4 text-gray-800">Classificação fiscal</h1>
+  <%= link_to 'Cadastrar', new_dashboard_tax_classification_path, class:"btn btn-success mb-2" %>
+  <% if @tax_classifications.empty? %>
+    <div class="alert alert-danger" role="alert">
+      Nenhum grupo cadastrado!
+    </div>
+  <% else %>
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Código Classificação</th>
+          <th scope="col">Alterar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tax_classifications.each do |tax_classification| %>
+          <tr>
+            <th scope="row"><%= tax_classification.id %></th>
+            <td><%= tax_classification.tax_code %></td>
+            <td><%= link_to 'Editar', edit_dashboard_tax_classification_path(tax_classification), class:"btn btn-secondary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+</div>

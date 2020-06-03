@@ -1,0 +1,20 @@
+<%= form_with model: [:dashboard, @family], local: true do |f| %>
+  <div class="row mb-3">
+      <div class="form-group col-md-3">
+      <label>Grupo</label>
+       <%= collection_select(:family, :group_id, Group.all, :id, :group_description, prompt: "Selecione", class:"form-control") %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :family_code %>
+      <%= f.text_field :family_code, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :family_description %>
+      <%= f.text_field :family_description, class: "form-control" %>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= f.submit class: 'btn btn-success', data: { disable_with: 'Criando....⌛'} %>
+    <%= link_to 'Cancelar', dashboard_families_path, class: "btn btn-danger ml-1" %>
+  </div>
+<% end %>

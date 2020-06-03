@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <h1 class="h3 mb-4 text-gray-800">Lista de usuários</h1>
+  <%= link_to 'Cadastrar', new_dashboard_user_path, class:"btn btn-success mb-2" %>
+  <% if @users.empty? %>
+    <div class="alert alert-danger" role="alert">
+      Nenhum usuário cadastrado!
+    </div>
+  <% else %>
+<div class="table-responsive">
+    <table class="table table-hover">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">E-mail</th>
+        <th scope="col" class="text-center">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <th scope="row">
+            <%= user.id %>
+          </th>
+          <td>
+            <%= user.username %>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+          <td class="text-center">
+            <% if current_user.id == user.id || user.id != 1 %>
+              <%= link_to "Editar", edit_dashboard_user_path(user.id), class: "btn btn-primary" %>
+            <% else %>
+              <button type="button" class="btn btn-primary" disabled>Editar</button>
+            <% end %>
+            <% if current_user.id == user.id || user.id == 1 %>
+              <button type="button" class="btn btn-danger" disabled>Excluir</button>
+            <% else %>
+              <%= link_to "Excluir", dashboard_user_path(user.id), method: :delete,
+                  data:{ confirm: "Tem certeza disso?" }, class:"btn btn-danger" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+</div>

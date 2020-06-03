@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catalogo Digital Nestlé</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'sb-admin-2.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <body id="page-top">
+    <div id="wrapper">
+      <%= render 'layouts/shared_dashboard/sidebar' %>
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%= render 'layouts/shared_dashboard/nav' %>
+          <% flash.each do |type, message| %>
+            <div class="alert alert-<%= type == 'alert' ? 'danger' : 'success' %> alert-dismissible fade show" role="alert">
+              <%= message %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
+        <%= render 'layouts/shared_dashboard/footer' %>
+      </div>
+    </div>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%= javascript_include_tag 'sb-admin-2.min', 'data-turbolinks-track': 'reload' %>
+</html>

@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+      <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar produto" aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button">
+          <i class="fas fa-search fa-sm"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <hr>
+  <h1 class="h3 mb-4 text-gray-800">Lista de produtos</h1>
+  <%= link_to 'Cadastrar', new_dashboard_product_path, class:"btn btn-success mb-2" %>
+  <%= link_to 'Importar Planilha', new_dashboard_product_path, class:"btn btn-primary mb-2" %>
+  <%= link_to 'Exportar Catalogo', new_dashboard_product_path, class:"btn btn-secondary mb-2" %>
+  <% if @products.empty? %>
+    <div class="alert alert-danger" role="alert">
+      Nenhum produto cadastrado!
+    </div>
+  <% else %>
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Descrição grupo</th>
+          <th scope="col">Descrição familia</th>
+          <th scope="col">Código produto</th>
+          <th scope="col">Descrição produto</th>
+          <th scope="col">Alterar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <th scope="row"><%= product.id %></th>
+            <td><%= product.group.group_description %></td>
+            <td><%= product.family.family_description %></td>
+            <td><%= product.product_code %></td>
+            <td><%= product.product_description %></td>
+            <td><%= link_to 'Editar', edit_dashboard_product_path(product), class:"btn btn-secondary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+</div>

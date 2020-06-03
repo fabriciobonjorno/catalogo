@@ -1,0 +1,12 @@
+<%= form_with model: [:dashboard,@tax_classification], local: true do |f| %>
+  <div class="row mb-3 offset-md-2">
+    <div class="form-group col-md-5">
+      <%= f.label :tax_code %>
+      <%= f.text_field :tax_code, class: "form-control" %>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= f.submit class: 'btn btn-success', data: { disable_with: 'Criando....⌛'} %>
+    <%= link_to 'Cancelar', dashboard_tax_classifications_path, class: "btn btn-danger ml-1" %>
+  </div>
+<% end %>

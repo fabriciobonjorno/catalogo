@@ -1,0 +1,37 @@
+pt-BR:
+  activerecord:
+    models:
+      group: 
+        one: Grupo
+        other: Grupos
+      tax_classification:
+        one: Classificação
+        other: Classificações
+      family:
+        one: Família
+        other: Famílias
+      product:
+        one: Produto
+        other: Produtos
+      line:
+        one: Line
+        other: Lines
+    attributes:
+      group:
+        group_code: Código do grupo
+        group_description: Descrição do grupo
+      tax_classification:
+        tax_code: NCM
+      family:
+        family_code: Código da família
+        family_description: Descrição da família
+      product:
+        product_code: Código do produto
+        product_description: Descrição do produto
+        product_ean: Código EAN
+        product_dun: Código DUN
+        status: Status
+        releases: Lançamento
+        display_ean: EAN display
+      line:
+        line_description: Descrição da linha

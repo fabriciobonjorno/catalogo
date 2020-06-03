@@ -1,0 +1,88 @@
+@import "bootstrap/dist/css/bootstrap.min";
+
+.title-collapsed{
+  cursor: pointer;
+}
+
+a{
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.body-login{
+  height: 100vh;
+  width: 100vw;
+}
+
+select{
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.img_vertical{
+  height: 450px;
+  width: 500px;
+  margin: auto;
+}
+
+.img_horizontal{
+  height: 400px;
+  width: 470px;
+  margin: auto;
+}
+
+.done a{
+  color: #fff;
+}
+
+.done_dashboard a{
+  color: #858796;
+}
+
+.done_dashboard a:hover{
+  color: #858796;
+  text-decoration: underline;
+}
+
+.done a:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+.count_number{
+  font-size: 60px;
+}
+
+/*Menu*/
+
+.menu .accordion-heading {  position: relative; }
+.menu .accordion-heading .edit {
+    position: absolute;
+    top: 8px;
+    right: 30px; 
+}
+.menu .area { border-left: 4px solid #f38787; }
+.menu .equipamento { border-left: 4px solid #65c465; }
+.menu .ponto { border-left: 4px solid #98b3fa; }
+.menu .collapse.in { overflow: visible; }
+
+
+.accordion{margin-bottom:20px;}
+.accordion-group{margin-bottom:2px;border:1px solid #e5e5e5;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.accordion-heading{border-bottom:0;}
+.accordion-heading .accordion-toggle{display:block;padding:8px 15px;}
+.accordion-toggle{cursor:pointer;}
+.accordion-inner{padding:9px 15px;border-top:1px solid #e5e5e5;}  

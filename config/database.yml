@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: catalog_nestle_development
+
+test:
+  <<: *default
+  database: catalog_nestle_test
+
+production:
+  <<: *default
+  database: catalog_nestle_production
+  username: catalog_nestle
+  password: <%= ENV['CATALOG_NESTLE_DATABASE_PASSWORD'] %>

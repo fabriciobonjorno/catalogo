@@ -1,0 +1,27 @@
+<div class="col-lg-9">
+  <% if @family.products.any? %>
+    <h3 class="text-muted mt-5 mb-3">Produtos da Família <%= @family.family_description %>:</h3>
+    <div class="row mt-5">
+      <% @family.products.each do |product| %>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <% if product.image.attached? %>
+              <%= link_to product_detail_path(product) do %>
+                <%= image_tag product.image, class: "img-fluid", title: "#{product.product_description}" %>
+              <% end %>
+            <% else %>
+              <%= image_tag '/no_image.jpg', class:"img-fluid" %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <%= link_to product.product_description, product_detail_path(product) %>
+              </h5>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h3 class="text-muted mt-5 mb-3">Familia não encontrada!</h3>
+  <% end %>
+</div>

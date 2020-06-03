@@ -1,0 +1,23 @@
+<div class="col-lg-9">
+  <h3 class="text-muted mt-5 mb-3">Conheça nossos lançamentos:</h3>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <% if product.image.attached? %>
+            <%= link_to product_detail_path(product) do %>
+              <%= image_tag product.image, class: "img-fluid", title: product.product_description %>
+            <% end %>
+          <% else %>
+            <%= image_tag '/no_image.jpg', class:"img-fluid" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center">
+              <%= link_to product.product_description, product_detail_path(product) %>
+            </h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

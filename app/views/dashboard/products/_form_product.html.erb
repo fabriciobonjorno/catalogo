@@ -1,0 +1,72 @@
+<%= form_with(model: [:dashboard, @product], local: true, multipart: true) do |f| %>
+  <div class="row">
+    <div class="form-group col-md-2">
+      <label>Grupo</label>
+      <%= collection_select(:product, :group_id, Group.all, :id, :group_description, prompt: "Selecione", class:"form-control") %>
+    </div>
+    <div class="form-group col-md-2">
+      <label>Familia</label>
+      <%= collection_select(:product, :family_id, Family.all, :id, :family_description, prompt: "Selecione", class:"form-control") %>
+    </div>
+    <div class="form-group col-md-2">
+      <label>Classificação</label>
+      <%= collection_select(:product, :tax_classification_id, TaxClassification.all, :id, :tax_code, prompt: "Selecione", class:"form-control") %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :product_code %>
+      <%= f.text_field :product_code, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :product_description %>
+      <%= f.text_field :product_description, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="form-group col-md-3">
+      <%= f.label :product_ean %>
+      <%= f.text_field :product_ean, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :display_ean %>
+      <%= f.text_field :display_ean, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :product_dun %>
+      <%= f.text_field :product_dun, class: "form-control" %>
+    </div>
+    <!--<div class="form-group col-md-3">
+      <%#= f.label :parent_id, 'Produto Principal' %>
+      <%#= f.collection_select :parent_id, Product.only_parents, :id, :product_description, { prompt: 'Selecione' } %>
+    </div>-->
+    <div class="form-group col-md-3">
+      <%= f.label :image, 'Imagem' %>
+      <%= f.file_field :image, direct_upload: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group ml-2">
+      <%= f.label :status, 'Ativo' %>
+      <%= f.check_box :status, class: "custom-checkbox" %>
+    </div>
+    <div class="form-group ml-3">
+      <%= f.label :releases, 'Lançamento' %>
+      <%= f.check_box :releases, class: "custom-checkbox" %>
+    </div>
+    <div class="form-group ml-3">
+      <%= f.label :status_dimension, 'Horizontal' %>
+      <%= f.check_box :status_dimension, class: "custom-checkbox" %>
+    </div>
+  </div>
+  <hr>
+  <div class="text-center mt-2"> Códigos similares</div>
+  <div id="similar_products">
+    <%= f.fields_for :similar_products do |similar_product| %>
+      <%= render 'similar_product_fields', f: similar_product %>
+    <% end %>
+    <%= link_to_add_association 'Adicionar', f, :similar_products, class: "btn btn-success mt-2" %>
+  </div>
+  <div class="text-center mt-5">
+    <%= f.submit class: 'btn btn-success', data: { disable_with: 'Criando... ⌛' } %>
+    <%= link_to 'Cancelar', dashboard_products_path, class: "btn btn-danger ml-1" %>
+  </div>
+<% end %>

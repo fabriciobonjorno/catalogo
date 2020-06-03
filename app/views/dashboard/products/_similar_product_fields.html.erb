@@ -1,0 +1,28 @@
+<div class="nested-fields">
+  <div class="row mt-3">
+    <div class="col-md-2">
+      <%= f.label :code %>
+      <%= f.text_field :code, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :ean %>
+      <%= f.text_field :ean, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :dun %>
+      <%= f.text_field :dun, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :display %>
+      <%= f.text_field :display, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <label for="">Remover linha</label>
+      <%= link_to_remove_association 'remover', f, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

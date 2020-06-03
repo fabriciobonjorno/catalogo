@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family_code: 1
+  family_description: MyString
+  group: one
+
+two:
+  family_code: 1
+  family_description: MyString
+  group: two

@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <h1 class="h3 mb-4 text-gray-800">Familias de produtos</h1>
+  <%= link_to 'Cadastrar', new_dashboard_family_path, class:"btn btn-success mb-2" %>
+  <% if @families.empty? %>
+    <div class="alert alert-danger" role="alert">
+      Nenhum grupo cadastrado!
+    </div>
+  <% else %>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descrição grupo</th>
+            <th scope="col">Código familia</th>
+            <th scope="col">Descrição familia</th>
+            <th scope="col">Alterar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @families.each do |family| %>
+            <tr>
+              <th scope="row"><%= family.id %></th>
+              <td><%= family.group.group_description %></td>
+              <td><%= family.family_code %></td>
+              <td><%= family.family_description %></td>
+              <td><%= link_to 'Editar', edit_dashboard_family_path(family), class:"btn btn-secondary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>

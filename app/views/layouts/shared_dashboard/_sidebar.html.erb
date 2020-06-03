@@ -1,0 +1,43 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <!-- Sidebar - Brand -->
+  <div class="sidebar-brand-text mx-3"><%= link_to 'Catalogo Nestlé', dashboard_index_path, class:"sidebar-brand d-flex align-items-center justify-content-center" %></div>
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item">
+    <%= link_to dashboard_groups_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-boxes"></i>
+      <span>Grupos</span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_families_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-box-tissue"></i>
+      <span>Familias</span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_tax_classifications_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-barcode"></i>
+      <span>Classificações</span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_products_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-box-open"></i>
+      <span>Produtos</span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_users_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-user"></i>
+      <span>Usúarios</span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider d-none d-md-block">
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+</ul>
