@@ -71,4 +71,4 @@ yarn-debug.log*
 !/storage/.keep
 
 # End of https://www.toptal.com/developers/gitignore/api/railsdatabase.yml
-database.yml
+/config/database.yml
