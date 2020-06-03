@@ -16,6 +16,6 @@ production:
   encoding: unicode
   database: catalogo
   pool: 5
-  username: catalog_nestle
+  username: root
   password: 159357
 
