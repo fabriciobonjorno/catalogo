@@ -43,7 +43,6 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   #config.active_storage.service = :amazon
   config.active_storage.service = :local
-  config.config.read_encrypted_secrets = true
   
 
   # Mount Action Cable outside main process or domain
