@@ -22,6 +22,7 @@ set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
 
 set :rvm_ruby_version, '2.6.5'
 
+
 namespace :puma do
   desc 'Create Puma dirs'
   task :create_dirs do
