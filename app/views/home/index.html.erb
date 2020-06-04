@@ -6,10 +6,10 @@
         <div class="card h-100">
           <% if product.image.attached? %>
             <%= link_to product_detail_path(product) do %>
-              <%= image_tag product.image, class: "img-fluid", title: product.product_description %>
+              <%= image_tag product.image, class: "img-fluid img-home", title: product.product_description %>
             <% end %>
           <% else %>
-            <%= image_tag '/no_image.jpg', class:"img-fluid" %>
+            <%= image_tag '/no_image.jpg', class:"img-fluid img-home" %>
           <% end %>
           <div class="card-body">
             <h5 class="card-title text-center">
