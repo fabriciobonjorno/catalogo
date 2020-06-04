@@ -72,3 +72,6 @@ yarn-debug.log*
 
 # End of https://www.toptal.com/developers/gitignore/api/railsdatabase.yml
 /config/database.yml
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
