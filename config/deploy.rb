@@ -7,7 +7,7 @@ set :repo_url, "git@github.com:fabriciobonjorno/catalogo.git"
 set :deploy_to, "/var/www/catalogo"
 
 append :linked_files, "config/database.yml", "config/storage.yml", "config/master.key"
-append :linked_dirs, "log", "tmp"
+append :linked_dirs, "log", "tmp", "storage"
 
 set :keep_releases, 5
 set :migration_role, :app
