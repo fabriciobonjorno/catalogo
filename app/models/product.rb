@@ -39,6 +39,7 @@ class Product < ApplicationRecord
 
   #scope :only_parents, -> { where(parent_id: nil) }
   scope :releases_home, -> { where(releases: true) }
+  scope :status_product, -> { where(status: true) }
   scope :status_dimension, -> { where(status_dimension: true) }
   scope :releases_true, -> { where(releases: true).count }
   scope :status_true, -> { where(status: true).count }
