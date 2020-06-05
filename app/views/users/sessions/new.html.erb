@@ -7,7 +7,7 @@
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block bg-login-image">
-                <%= image_tag '/login.jpeg', class:"card-img-top img-fluid" %>
+                <%= image_tag asset_path('logo-login.png'), class:"card-img-top img-fluid" %>
               </div>
               <div class="col-lg-6">
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:"bg-primary") do |f| %>
