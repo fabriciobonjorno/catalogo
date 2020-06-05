@@ -33,8 +33,6 @@ gem 'friendly_id', '~> 5.3'
 gem 'pg_search'
 #gem 'aws-sdk-s3'
 gem "cocoon"
-gem 'aws-sdk-s3'
-gem 'mini_magick'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
