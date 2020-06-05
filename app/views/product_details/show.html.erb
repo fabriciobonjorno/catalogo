@@ -32,28 +32,30 @@
     </div>
     <div class="card-body">
       <% if @product.similar_products.any? %>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Código</th>
-              <th scope="col">Descrição</th>
-              <th scope="col">Ean</th>
-              <th scope="col">Dun</th>
-              <th scope="col">Ean display</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @product.similar_products.each do |similar_product| %>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
               <tr>
-                <td><%= similar_product.code %></td>
-                <td><%= similar_product.description %></td>
-                <td><%= similar_product.ean %></td>
-                <td><%= similar_product.dun %></td>
-                <td><%= similar_product.display.presence || "Não possui" %></td>
+                <th scope="col">Código</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Ean</th>
+                <th scope="col">Dun</th>
+                <th scope="col">Ean display</th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <% @product.similar_products.each do |similar_product| %>
+                <tr>
+                  <td><%= similar_product.code %></td>
+                  <td><%= similar_product.description %></td>
+                  <td><%= similar_product.ean %></td>
+                  <td><%= similar_product.dun %></td>
+                  <td><%= similar_product.display.presence || "Não possui" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       <% else %>
         <p class="text-muted">Nenhum produto similar encontrado.</p>
       <% end %>
