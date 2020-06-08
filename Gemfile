@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'friendly_id', '~> 5.3'
 gem 'pg_search'
-#gem 'aws-sdk-s3'
+gem 'aws-sdk-s3'
 gem "cocoon"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
