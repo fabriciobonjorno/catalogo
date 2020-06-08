@@ -14,7 +14,7 @@
   <%= link_to 'Cadastrar', new_dashboard_product_path, class:"btn btn-success mb-2" %>
   <%= form_for :spreadsheet, url: '/dashboard/import_products'  do |f| %>
     <%= f.file_field :upload, class:"btn btn-primary mb-2" %>
-    <%= link_to 'Baixar Modelo', 'modelo_produtos.xlsx', download: 'modelo_produtos.xlsx' %>
+    <%= link_to 'Baixar Modelo', '/modelo_produtos.xlsx', download: 'modelo_produtos.xlsx' %>
   <% end %>
   <%= link_to 'Exportar Catalogo', new_dashboard_product_path, class:"btn btn-secondary mb-2" %>
   <% if @products.empty? %>
