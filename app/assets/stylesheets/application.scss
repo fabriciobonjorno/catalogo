@@ -41,7 +41,7 @@ select{
 
 .img_vertical{
   height: 450px;
-  width: 500px;
+  width: 100%;
   margin: auto;
 }
 
@@ -96,8 +96,8 @@ select{
 @media (max-width: 570px) 
 {
 .img_vertical{
-  height: 450px;
-  width: 400px;
+  height: 360px;
+  width: 100%;
   margin: auto;
 }
 
