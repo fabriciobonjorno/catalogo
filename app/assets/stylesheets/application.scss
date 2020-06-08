@@ -93,11 +93,17 @@ select{
 .accordion-toggle{cursor:pointer;}
 .accordion-inner{padding:9px 15px;border-top:1px solid #e5e5e5;}  
 
-/*@media (max-width: 995px) 
+@media (max-width: 570px) 
 {
-  .img-home{
-    width: 100%;
-    height: 300px;
-    margin: auto;
-  }
-}*/
+.img_vertical{
+  height: 450px;
+  width: 400px;
+  margin: auto;
+}
+
+.img_horizontal{
+  height: 400px;
+  width: 370px;
+  margin: auto;
+}
+}
