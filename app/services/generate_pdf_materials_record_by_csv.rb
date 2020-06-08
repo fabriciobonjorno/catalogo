@@ -24,7 +24,7 @@ module GeneratePdfMaterialsRecordByCsv
             products << product
           end
         end
-        GeneratePdf.material(products)
+        #TODO: GeneratePdf.material(products)
     end
 
     private
