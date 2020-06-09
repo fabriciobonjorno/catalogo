@@ -4,16 +4,16 @@
     <div class="card-deck">
       <% @products.each do |product| %>
         <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 text-center">
             <% if product.image.attached? %>
               <%= link_to product_detail_path(product) do %>
-                <%= image_tag product.image, class: "card-img-top", title: product.product_description %>
+                <%= image_tag product.image, class: "img-fluid img-item", title: product.product_description %>
               <% end %>
             <% else %>
-              <%= image_tag '/no_image.jpg', class:"card-img-top" %>
+              <%= image_tag '/no_image.jpg', class:"img-fluid img-item" %>
             <% end %>
             <div class="card-body">
-              <h5 class="card-title text-center">
+              <h5 class="card-title">
                 <%= link_to product.product_description, product_detail_path(product) %>
               </h5>
             </div>

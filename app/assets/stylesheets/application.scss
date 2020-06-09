@@ -1,5 +1,12 @@
 @import "bootstrap/dist/css/bootstrap.min";
 
+/* items display */
+.img-item{
+  max-height: 233px !important;
+  width: auto;
+  vertical-align: middle !important;
+}
+
 .title-collapsed{
   cursor: pointer;
 }
@@ -41,7 +48,7 @@ select{
 
 .img_vertical{
   height: 450px;
-  width: 500px;
+  //width: 500px;
   margin: auto;
 }
 
@@ -97,7 +104,7 @@ select{
 {
 .img_vertical{
   height: 350px;
-  width: 100%;
+  //width: 100%;
   margin: auto;
 }
 
