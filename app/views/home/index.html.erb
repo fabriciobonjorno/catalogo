@@ -20,9 +20,7 @@
       </div>
     <% end %>
   </div>
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item"><%= paginate @products, class:"page-link" %></li>
-    </ul>
-  </nav>
+  <div class="text-center">
+    <%= paginate @products %>
+  </div>
 </div>
