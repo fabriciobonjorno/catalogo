@@ -5,8 +5,8 @@ class HomeController < ApplicationController
   include MenuResources
   before_action :set_resources, only: %i[index show]
   def index
-    @products = Product.limit(9).releases_home
-
+    @products = Product.order(:product_code).releases_home.page(params[:page]).per(9)
+ 
     # TODO: remove the code above before merge
     # GeneratePdfMaterialsRecordByCsv.execute
     # redirect_to '/products.pdf'
