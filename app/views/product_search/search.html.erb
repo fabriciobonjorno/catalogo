@@ -9,15 +9,17 @@
     </h2>
     <div class="card-deck">
       <% @products.each do |product| %>
-        <div class="card">
-          <% if product.image.attached? %>
-            <%= image_tag product.image, class:"img-fluid card-img-top", title:"#{product.product_description}" %>
-          <% else %>
-            <%= image_tag '/no_image.jpg', class:"img-fluid" %>
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title text-center">
-              <%= link_to "#{product.product_code}" '-' "#{product.product_description}", product_detail_path(product) %></h5>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 text-center">
+            <% if product.image.attached? %>
+              <%= image_tag product.image, class:"img-fluid img-item", title:"#{product.product_description}" %>
+            <% else %>
+              <%= image_tag '/no_image.jpg', class:"img-fluid img-item" %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= link_to "#{product.product_code}" '-' "#{product.product_description}", product_detail_path(product) %></h5>
+            </div>
           </div>
         </div>
       <% end %>
