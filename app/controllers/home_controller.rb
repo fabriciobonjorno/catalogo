@@ -11,4 +11,18 @@ class HomeController < ApplicationController
     # GeneratePdfMaterialsRecordByCsv.execute
     # redirect_to '/products.pdf'
   end
+
+  def newsletter
+    @subscriber = Subscriber.new(subscriber_params)  
+    if @subscriber.save
+      redirect_to((request.referer || '/'), :notice => "Newsletter assinado com sucesso!")
+    else
+      redirect_to((request.referer || '/'), :alert => "E-mail já cadastrado ou inválido")
+    end
+  end
+
+  private
+  def subscriber_params
+    params.require(:newsletter).permit(:email)
+  end
 end

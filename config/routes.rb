@@ -20,4 +20,5 @@ Rails.application.routes.draw do
     resources :users, except: %i[show]
     resources :lines, except: %i[show destroy]
   end
+  match "/newsletter" => 'home#newsletter', :as => :subscriber, :via => :post
 end
