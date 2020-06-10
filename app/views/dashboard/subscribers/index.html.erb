@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <h1 class="h3 mb-4 text-gray-800">Newsletter</h1>
+    <%= link_to 'Exportar CSV', export_csv_dashboard_subscribers_path, class:"btn btn-info mb-2" %>
   <% if @subscribers.empty? %>
     <div class="alert alert-danger" role="alert">
       Nenhum grupo cadastrado!

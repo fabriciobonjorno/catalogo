@@ -19,7 +19,11 @@ Rails.application.routes.draw do
     resources :import_products, only: %i[create]
     resources :users, except: %i[show]
     resources :lines, except: %i[show destroy]
-    resources :subscribers, only: %i[index]
+    resources :subscribers, only: %i[index] do
+      collection do
+        get :export_csv
+      end
+    end
   end
   match "/newsletter" => 'home#newsletter', :as => :subscriber, :via => :post
 end
