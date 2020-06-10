@@ -6,6 +6,12 @@
   <!-- Divider -->
   <hr class="sidebar-divider">
   <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+    <%= link_to dashboard_subscribers_path, class: "nav-link" do %>
+      <i class="fas fa-envelope-open-text"></i>
+      <span>Newsletter</span>
+    <% end %>
+  </li>
   <li class="nav-item">
     <%= link_to dashboard_groups_path, class: "nav-link" do %>
       <i class="fas fa-fw fa-boxes"></i>
