@@ -6,11 +6,12 @@ class HomeController < ApplicationController
   before_action :set_resources, only: %i[index show]
   def index
     @products = Product.order(:product_code).releases_home.page(params[:page]).per(9)
- 
+    @subscriber = Subscriber.new
     # TODO: remove the code above before merge
     # GeneratePdfMaterialsRecordByCsv.execute
     # redirect_to '/products.pdf'
   end
+
 
   def newsletter
     @subscriber = Subscriber.new(subscriber_params)  
@@ -23,6 +24,6 @@ class HomeController < ApplicationController
 
   private
   def subscriber_params
-    params.require(:newsletter).permit(:email)
+    params.require(:subscriber).permit(:email)
   end
 end
