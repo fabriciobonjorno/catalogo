@@ -32,11 +32,19 @@
       </div>
     </div>
   <% end %>
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type == 'alert' ? 'danger' : 'success' %> alert-dismissible fade show" role="alert">
+      <%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% end %>
   <%= form_with model: @subscriber, :url => subscriber_path, method: :post, local: true do |f| %>
-  <div class="text-center">
-    <p>Fique por dentro dos nossos lançamentos!</p>
-    <%= f.text_field :email, class:"form-control mt-2", type:"email", placeholder:"Insira seu melhor e-mail", required: true %>
-    <%= f.submit "Assinar", class:"btn btn-secondary mt-2" %>
-  </div>
-<% end %>
+    <div class="text-center">
+      <p>Fique por dentro dos nossos lançamentos!</p>
+      <%= f.text_field :email, class:"form-control mt-2", type:"email", placeholder:"Insira seu melhor e-mail", required: true %>
+      <%= f.submit "Assinar", class:"btn btn-secondary mt-2" %>
+    </div>
+  <% end %>
 </div>

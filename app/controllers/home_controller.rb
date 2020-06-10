@@ -7,9 +7,6 @@ class HomeController < ApplicationController
   def index
     @products = Product.order(:product_code).releases_home.page(params[:page]).per(9)
     @subscriber = Subscriber.new
-    # TODO: remove the code above before merge
-    # GeneratePdfMaterialsRecordByCsv.execute
-    # redirect_to '/products.pdf'
   end
 
 
