@@ -19,10 +19,3 @@
 //= require turbolinks
 //= require_tree .
 
-document.addEventListener('turbolinks:load', function() {
-  let spreadsheetField = document.getElementById('spreadsheet_upload');
-
-   spreadsheetField.addEventListener('change', function() {
-    spreadsheetField.parentNode.submit();
-  });
-});
