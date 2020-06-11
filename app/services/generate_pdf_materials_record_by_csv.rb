@@ -38,10 +38,6 @@ module GeneratePdfMaterialsRecordByCsv
       end
     end
 
-    def csv
-      CSV.read('./lib/assets/materials_record.csv')
-    end
-
     def tax_classification
       TaxClassification.first_or_create(tax_code: @row[2].cell_value.strip)
     end
