@@ -1,0 +1,6 @@
+      <%= f.text_field :group_id, list: "group", class: "form-control" %>
+      <datalist id="group">
+        <% Group.all.each do |group| %>
+          <option value="<%= group.id %> - <%= group.group_description %>"></option>
+        <% end %>
+      </datalist>
