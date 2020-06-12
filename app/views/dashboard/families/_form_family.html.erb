@@ -2,13 +2,7 @@
   <div class="row mb-3">
     <div class="form-group col-md-3">
       <label>Grupo</label>
-      <%= f.text_field :group_id, list: "group", class: "form-control" %>
-      <datalist id="group">
-        <% Group.all.each do |group| %>
-          <option value="<%= group.id %> - <%= group.group_description %>"></option>
-        <% end %>
-      </datalist>
-      <%#= collection_select(:family, :group_id, Group.all, :id, :group_description, prompt: "Selecione", class:"form-control") %>
+      <%= collection_select(:family, :group_id, Group.all, :id, :group_description, prompt: "Selecione", class:"form-control") %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :family_code %>
