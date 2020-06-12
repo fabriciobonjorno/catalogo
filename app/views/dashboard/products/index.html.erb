@@ -13,8 +13,11 @@
   <h1 class="h3 mb-4 text-gray-800">Lista de produtos</h1>
   <%= link_to 'Cadastrar', new_dashboard_product_path, class:"btn btn-success mb-2" %>
   <%= form_for :spreadsheet, url: '/dashboard/import_products'  do |f| %>
-    <%= f.file_field :upload, class:"btn btn-primary mb-2" %>
-    <%= link_to 'Baixar Modelo', '/modelo_produtos.xlsx', download: 'modelo_produtos.xlsx' %>
+    <%= f.file_field :upload %>
+    <div class="input-groupd">
+      <%= button_to 'Importar Planilha', {}, class: "btn btn-primary mb-2", id: :btn_import_spreadsheet %>
+      <%= link_to 'Baixar Modelo', '/modelo_produtos.xlsx', download: 'modelo_produtos.xlsx' %>
+    </div>
   <% end %>
   <%= link_to 'Exportar Catalogo', new_dashboard_product_path, class:"btn btn-secondary mb-2" %>
   <% if @products.empty? %>
@@ -22,31 +25,31 @@
       Nenhum produto cadastrado!
     </div>
   <% else %>
-<div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Descrição grupo</th>
-          <th scope="col">Descrição familia</th>
-          <th scope="col">Código produto</th>
-          <th scope="col">Descrição produto</th>
-          <th scope="col">Alterar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <th scope="row"><%= product.id %></th>
-            <td><%= product.group.group_description %></td>
-            <td><%= product.family.family_description %></td>
-            <td><%= product.product_code %></td>
-            <td><%= product.product_description %></td>
-            <td><%= link_to 'Editar', edit_dashboard_product_path(product), class:"btn btn-secondary" %></td>
+            <th scope="col">#</th>
+            <th scope="col">Descrição grupo</th>
+            <th scope="col">Descrição familia</th>
+            <th scope="col">Código produto</th>
+            <th scope="col">Descrição produto</th>
+            <th scope="col">Alterar</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <th scope="row"><%= product.id %></th>
+              <td><%= product.group.group_description %></td>
+              <td><%= product.family.family_description %></td>
+              <td><%= product.product_code %></td>
+              <td><%= product.product_description %></td>
+              <td><%= link_to 'Editar', edit_dashboard_product_path(product), class:"btn btn-secondary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 </div>
