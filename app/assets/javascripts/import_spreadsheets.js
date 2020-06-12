@@ -7,7 +7,8 @@ document.addEventListener('turbolinks:load', function() {
     spreadsheetField.click();
   });
 
-   spreadsheetField.addEventListener('change', function() {
+  spreadsheetField.addEventListener('change', function() {
     spreadsheetField.parentNode.submit();
+    btnImportSpreadsheet.parentNode.insertAdjacentHTML('beforeEnd', '<div class="spinner"></div>');
   });
 });
