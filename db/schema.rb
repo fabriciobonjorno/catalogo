@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_143927) do
     t.bigint "family_id"
     t.boolean "status"
     t.boolean "releases"
-    t.integer "display_ean"
+    t.string "display_ean"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
