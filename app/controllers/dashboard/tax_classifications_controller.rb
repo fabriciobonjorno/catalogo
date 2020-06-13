@@ -4,7 +4,7 @@ class Dashboard::TaxClassificationsController < DashboardController
   before_action :set_tax_classification, only: %i[edit update]
 
   def index
-    @tax_classifications = TaxClassification.all
+    @tax_classifications = TaxClassification.order(:tax_code).page(params[:page]).per(10)
   end
 
   def new

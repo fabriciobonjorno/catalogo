@@ -4,7 +4,7 @@ class Dashboard::UsersController < DashboardController
   before_action :set_user, only: %i[edit update destroy]
   before_action :allow_without_password, only: [:update]
   def index
-    @users = User.all
+    @users = User.order(:username).page(params[:page]).per(10)
   end
 
   def new

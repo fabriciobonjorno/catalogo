@@ -4,7 +4,7 @@ class Dashboard::FamiliesController < DashboardController
   before_action :set_families, only: %i[edit update]
 
   def index
-    @families = Family.all
+    @families = Family.order(:family_code).page(params[:page]).per(10)
   end
 
   def new

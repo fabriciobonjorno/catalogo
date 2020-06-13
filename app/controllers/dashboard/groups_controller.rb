@@ -4,7 +4,7 @@ class Dashboard::GroupsController < DashboardController
   before_action :set_groups, only: %i[edit update]
 
   def index
-    @groups = Group.all
+    @groups = Group.order(:group_code).page(params[:page]).per(10)
   end
 
   def new

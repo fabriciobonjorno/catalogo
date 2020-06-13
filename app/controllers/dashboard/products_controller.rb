@@ -2,7 +2,7 @@ class Dashboard::ProductsController < DashboardController
   before_action :set_products, only: %i[edit update]
 
   def index
-    @products = Product.all
+    @products = Product.order(:product_code).page(params[:page]).per(10)
   end
 
   def new
