@@ -12,7 +12,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :family, foreign_key: true
       t.boolean :status
       t.boolean :releases
-      t.integer :display_ean
+      t.string :display_ean
 
       t.timestamps
     end
