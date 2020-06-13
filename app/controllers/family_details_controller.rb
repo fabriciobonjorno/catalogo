@@ -2,6 +2,7 @@ class FamilyDetailsController < HomeController
   #include MenuResources
   #before_action :set_resources, only: %i[show]
   def show
-    @family = Family.page(params[:page]).per(9).find(params[:id])
+    @family = Family.find(params[:id])
+    @products = @family.products.page(params[:page]).per(9)
   end
 end
