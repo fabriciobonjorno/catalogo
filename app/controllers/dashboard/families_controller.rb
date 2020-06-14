@@ -5,6 +5,12 @@ class Dashboard::FamiliesController < DashboardController
 
   def index
     @families = Family.order(:family_code).page(params[:page]).per(10)
+    if params[:group_id].present?
+      @families = Family.where("group_id = ?", params[:group_id])
+      respond_to do |format|
+        format.json { render :json => @families }
+      end
+    end
   end
 
   def new
