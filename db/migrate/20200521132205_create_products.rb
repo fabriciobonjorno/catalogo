@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :tax_classification, foreign_key: true
       t.references :group, foreign_key: true
       t.references :family, foreign_key: true
-      t.boolean :status
+      t.boolean :status, :boolean, :default => true
       t.boolean :releases
       t.string :display_ean
 

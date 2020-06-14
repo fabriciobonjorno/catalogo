@@ -68,7 +68,8 @@ ActiveRecord::Schema.define(version: 2020_06_10_143927) do
     t.bigint "tax_classification_id"
     t.bigint "group_id"
     t.bigint "family_id"
-    t.boolean "status"
+    t.boolean "status", default: true
+    t.boolean "boolean", default: true
     t.boolean "releases"
     t.string "display_ean"
     t.datetime "created_at", null: false
