@@ -6,4 +6,6 @@ class Group < ApplicationRecord
 
   has_many :families, dependent: :destroy
   belongs_to :line
+
+  scope :group_order, -> { order(group_description: :asc) }
 end

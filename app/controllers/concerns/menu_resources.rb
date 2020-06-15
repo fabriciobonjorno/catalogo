@@ -6,7 +6,7 @@ module MenuResources
   private
 
   def set_resources
-    @lines = Line.all
-    @groups = Group.order(:group_description)
+    @lines = Line.family_order
+    @groups = Group.group_order
   end
 end
