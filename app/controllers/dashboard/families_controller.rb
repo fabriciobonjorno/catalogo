@@ -4,12 +4,11 @@ class Dashboard::FamiliesController < DashboardController
   before_action :set_families, only: %i[edit update]
 
   def index
-    @families = Family.order(:family_code).page(params[:page]).per(10)
     if params[:group_id].present?
-      @families = Family.where("group_id = ?", params[:group_id])
-      respond_to do |format|
-        format.json { render :json => @families }
-      end
+      render(json: Family.where(group_id: params[:group_id]))
+    else
+      # FIXME: this should be in a separate action
+      @families = Family.order(:family_code).page(params[:page]).per(10)
     end
   end
 

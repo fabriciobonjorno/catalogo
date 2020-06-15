@@ -72,24 +72,22 @@
 <% end %>
 
 <script>
-$(document).ready(function(){
-  $(".cascata #product_group_id").change(function(){
-    if (this.value == ""){
-      $(".cascata #product_families_id").html("");
-      return
-    }
-
-    $.ajax("/families.json?group_id=" + this.value)
-    .done(function(data){
-      var htmlOptions = ""
-      for(var i = 0; i<data.length; i++){
-        htmlOptions += "<option value='" + data[i].id + "'>" + data[i].family_description + "</option>"
+  document.addEventListener("turbolinks:load", () => {
+    $("#product_group_id").change(({ target }) => {
+      const groupId = target.value;
+      if (!groupId) {
+        $("#product_family_id option").remove();
+        return;
       }
-      $(".dynamic #product_families_id").html(htmlOptions);
-    })
-    .fail(function(){
-      alert("Error");
+      $.ajax(`/dashboard/families.json?group_id=${groupId}`)
+        .done((families) => {
+          const htmlOptions = families.reduce((options, family) => {
+            options += `<option value='${family.id}'>${family.family_description}</option>`;
+            return options;
+          }, []);
+          $(".dynamic #product_family_id").html(htmlOptions);
+        })
+        .fail((error) => console.error(error));
     });
   });
-});
 </script>
