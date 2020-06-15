@@ -15,3 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w[sb-admin-2.min.js sb-admin-2.min.css]
+Rails.configuration.assets.precompile += %w[serviceworker.js manifest.json]
