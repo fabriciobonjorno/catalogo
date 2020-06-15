@@ -7,5 +7,5 @@ class Group < ApplicationRecord
   has_many :families, dependent: :destroy
   belongs_to :line
 
-  scope :order_group, -> { order(group_description: DESC)}
+  scope :order_group, -> {order(:group_description)}
 end
