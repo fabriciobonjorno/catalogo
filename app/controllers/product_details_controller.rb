@@ -4,7 +4,5 @@ class ProductDetailsController < HomeController
   def show
     @product = Product.friendly.find(params[:id])
     @product_dimension = Product.status_dimension
-
-    #@similar_products = @product.parent&.sub_products.where.not(id: @product.id)
   end
 end
