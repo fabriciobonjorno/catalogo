@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Family < ApplicationRecord
   validates :family_code, :family_description, presence: true
   validates :family_description, uniqueness: true
@@ -7,5 +5,5 @@ class Family < ApplicationRecord
   belongs_to :group
   has_many :products, dependent: :destroy
 
-  default_scope { order(family_description: :asc)}
+  scope :order_family, -> { order(family_description: :asc)}
 end
