@@ -7,5 +7,4 @@ class Family < ApplicationRecord
   belongs_to :group
   has_many :products, dependent: :destroy
 
-  scope :order_family, -> {reorder(:family_description, :desc)}
 end
