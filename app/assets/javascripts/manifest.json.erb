@@ -1,7 +1,7 @@
 <% icon_sizes = Rails.configuration.serviceworker.icon_sizes %>
 {
   "name": "Meu Catálogo",
-  "short_name": "Meu Catálogo PWA",
+  "short_name": "Meu Catálogo",
   "start_url": "/",
   "icons": [
   <% icon_sizes.map { |s| "#{s}x#{s}" }.each.with_index do |dim, i| %>
