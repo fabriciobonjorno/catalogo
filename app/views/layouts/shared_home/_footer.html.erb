@@ -1,4 +1,3 @@
-<% if @products.count > 6 %>
   <footer class="py-5 bg-dark">
   <div class="container">
     <p class="m-0 text-center text-white">
@@ -11,17 +10,3 @@
     </p>
   </div>
 </footer>
-<% else %>
-  <footer class="py-5 bg-dark fixed-bottom">
-  <div class="container">
-    <p class="m-0 text-center text-white">
-      Copyright &copy; <%= Date.current.year %>
-      -
-      <span class="done">
-        Desenvolvido por
-        <a href="https://www.linkedin.com/in/fabriciobonjorno" target="_blank">Fabricio Bonjorno</a>.
-      </span>
-    </p>
-  </div>
-</footer>
-<% end %>
