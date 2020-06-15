@@ -2,9 +2,12 @@
 
 class HomeController < ApplicationController
   layout 'home'
-  include MenuResources
-  before_action :set_resources, only: %i[index show]
+  #include MenuResources
+  #before_action :set_resources, only: %i[index show]
   def index
+    @lines = Line.all
+    @families = Family.order_family
+    @groups = Group.order_group
     @products = Product.order(:product_code).releases_home.page(params[:page]).per(9)
     @subscriber = Subscriber.new
   end
