@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module MenuResources
   extend ActiveSupport::Concern
 
@@ -7,7 +5,7 @@ module MenuResources
 
   def set_resources
     @lines = Line.all
-    @families = Group.families.order_family
-    @groups = Line.groups.order_group
+    @families = Family.order_family
+    @groups = Group.order_group
   end
 end

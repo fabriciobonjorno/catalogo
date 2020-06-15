@@ -1,4 +1,5 @@
-<footer class="py-5 bg-dark">
+<% if @products.count > 6 %>
+  <footer class="py-5 bg-dark">
   <div class="container">
     <p class="m-0 text-center text-white">
       Copyright &copy; <%= Date.current.year %>
@@ -10,3 +11,4 @@
     </p>
   </div>
 </footer>
+<% end %>
