@@ -7,5 +7,5 @@ class Family < ApplicationRecord
   belongs_to :group
   has_many :products, dependent: :destroy
 
-  scope :order_family, -> {order(:family_description)}
+  scope :order_family, -> {order(:family_description, :desc)}
 end
