@@ -8,7 +8,7 @@
           </div>
           <div class="accordion-body collapse" id="<%= line.line_description%>">
             <div class="accordion-inner">
-              <% line.groups.each(:order :group_description) do |group| %>
+              <% line.groups.each do |group| %>
                 <div class="accordion">
                   <div class="accordion-group">
                     <div class="accordion-heading equipamento">
