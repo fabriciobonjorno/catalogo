@@ -8,7 +8,7 @@ class Dashboard::FamiliesController < DashboardController
       render(json: Family.where(group_id: params[:group_id]))
     else
       # FIXME: this should be in a separate action
-      @families = Family.order_family.page(params[:page]).per(10)
+      @families = Family.order(:family_code).page(params[:page]).per(10)
     end
   end
 
