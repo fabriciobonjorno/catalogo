@@ -21,6 +21,7 @@ class Product < ApplicationRecord
 
   pg_search_scope :search,
                   against: %i[product_description product_ean product_code product_dun],
+                  associated_against: { similar_products: %i[description code ean dun display] },
                   using: { tsearch: { prefix: true } }
 
   validate :image_validation
