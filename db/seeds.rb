@@ -56,16 +56,22 @@ if Rails.env.development?
 
   puts ">> Creating products..."
 
-  Family.all.each.with_index(1) do |family, index|
-    Product.find_or_create_by!(product_code: index) do |product|
-      product.group = family.group
-      product.family = family
-      product.tax_classification = tax_classification
-      product.product_description = family.group.group_description
-      product.product_ean = index
-      product.product_dun = index
-      product.status = true
-      product.releases = true
+  PRODUCTS_PER_FAMILY = 20
+
+  Family.all.each.with_index do |family, family_index|
+    PRODUCTS_PER_FAMILY.times do |index|
+      product_index = (family_index * PRODUCTS_PER_FAMILY) + index.next
+
+      Product.find_or_create_by!(product_code: product_index) do |product|
+        product.group = family.group
+        product.family = family
+        product.tax_classification = tax_classification
+        product.product_description = "Produto #{product_index}"
+        product.product_ean = product_index
+        product.product_dun = product_index
+        product.status = true
+        product.releases = true
+      end
     end
   end
 end
