@@ -4,7 +4,7 @@ puts ">> Creating users..."
 
 User.find_or_create_by!(email: "admin@admin.com") do |user|
   user.username = "Admin"
-  user.password = "1qaz@wsx"
+  user.password = "1qaz@wsx" # This is only used in development
   user.password_confirmation = "1qaz@wsx"
 end
 
