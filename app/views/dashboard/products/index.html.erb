@@ -52,13 +52,13 @@
       </table>
     </div>
   <% end %>
-  <%= paginate @products %>
+  <%#= paginate @products %>
 </div>
 
 <script>
 $(document).ready(function() {
     $('#products').DataTable( {
-        "paging":   false,
+        "paging":   true,
         "ordering": false,
         "info":     false
     } );
