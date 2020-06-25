@@ -7,7 +7,56 @@ bootstrap@^4.5.0:
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.5.0.tgz#97d9dbcb5a8972f8722c9962483543b907d9b9ec"
   integrity sha512-Z93QoXvodoVslA+PWNdk23Hze4RBYIkpb5h8I2HY2Tu2h7A0LpAgLcyrhrSUyo2/Oxm2l1fRZPs1e5hnxnliXA==
 
-jquery@^3.5.1:
+datatables.net-bs@^1.10.15, datatables.net-bs@^1.10.21:
+  version "1.10.21"
+  resolved "https://registry.yarnpkg.com/datatables.net-bs/-/datatables.net-bs-1.10.21.tgz#c80e655033787512423ad78a45e8164f25417dc5"
+  integrity sha512-4mpesFXNEkLlQET3IDLclLz95Xit4Kp/jHcOM2X0nc/ijDfO3qJk3ehZ+NSEAkXZDge6ZtY5Zxq2O90ISiIjwQ==
+  dependencies:
+    datatables.net "1.10.21"
+    jquery ">=1.7"
+
+datatables.net-responsive-bs@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/datatables.net-responsive-bs/-/datatables.net-responsive-bs-2.2.5.tgz#4f8f4a200b19dd0b434bf6302491c4905d4d3c39"
+  integrity sha512-O3tIWZUiFtdHm5CkQ9I1vaQBQ74cchOq19JkYzWykkwP5mzW+tKuHINcajxDL5GJo8WXejG9BSNq6ZRK1BQkBw==
+  dependencies:
+    datatables.net-bs "^1.10.15"
+    datatables.net-responsive "2.2.5"
+    jquery ">=1.7"
+
+datatables.net-responsive@2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/datatables.net-responsive/-/datatables.net-responsive-2.2.5.tgz#33a11ec59b416a546a213b3b736e1ff8ad1fa5eb"
+  integrity sha512-AuF28BJRQWfke0cwZwgJB5+WHgoDCDAnW59TJWX4JAXYes3iFrJA6mNHWw46Up3bqUJVI2ZxJoKTGpoEHm5hNA==
+  dependencies:
+    datatables.net "^1.10.15"
+    jquery ">=1.7"
+
+datatables.net-searchpanes-bs@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/datatables.net-searchpanes-bs/-/datatables.net-searchpanes-bs-1.1.1.tgz#847f5c9e82423ab0f541b3db2952cc16dc997793"
+  integrity sha512-DjXiKg3g/jmQoQELWlCAtTKeKW2xFYUt7F/J6pGEOOuLQqfp3wEbEvkeM95WyDODQt2RUwbMgN8d4zaA+XGEBQ==
+  dependencies:
+    datatables.net-bs "^1.10.15"
+    datatables.net-searchpanes "1.1.1"
+    jquery ">=1.7"
+
+datatables.net-searchpanes@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/datatables.net-searchpanes/-/datatables.net-searchpanes-1.1.1.tgz#a06e3eb6dddb55b001b791cc068ab37a31a3e84b"
+  integrity sha512-ttMmiNxXuwbP7wLn7LH5E75gcHFMGUvauUgXEdqiv9BpRGl0GrIlDkAp686Ye9zCgWMDetUECxwZPb9M0sr5Gw==
+  dependencies:
+    datatables.net "^1.10.15"
+    jquery ">=1.7"
+
+datatables.net@1.10.21, datatables.net@^1.10.15:
+  version "1.10.21"
+  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.10.21.tgz#f1d35c8e5c3eb7f5caef39e80cd5b836a8c77103"
+  integrity sha512-/bSZtxmf3GTpYcvEmwZ8q26I1yhSx8qklR2B+s1K8+/51UW/zc2zTYwJMqr/Z+iCYixAc00ildj4g2x0Qamolw==
+  dependencies:
+    jquery ">=1.7"
+
+jquery@>=1.7, jquery@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
   integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==

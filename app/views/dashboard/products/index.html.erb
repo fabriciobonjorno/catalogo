@@ -26,7 +26,7 @@
     </div>
   <% else %>
     <div class="table-responsive">
-      <table class="table table-hover">
+      <table id="products" class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -54,3 +54,13 @@
   <% end %>
   <%= paginate @products %>
 </div>
+
+<script>
+$(document).ready(function() {
+    $('#products').DataTable( {
+        "paging":   false,
+        "ordering": false,
+        "info":     false
+    } );
+} );
+</script>
