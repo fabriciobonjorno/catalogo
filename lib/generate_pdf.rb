@@ -2,24 +2,42 @@
 
 require 'prawn'
 
-module GeneratePdf
+class GeneratePdf < Prawn::Document
   PDF_OPTIONS = {
     page_size: 'A4',
     page_layout: :portrait,
-    margin: [40, 75]
+    margin: [100, 0]
   }.freeze
 
-  def self.material(products)
+  def execute(products)
     Prawn::Document.new(PDF_OPTIONS) do |pdf|
-      pdf.fill_color '666666'
-      products.each do |product|
-        pdf.text 'Descrição'
-        pdf.text product.dig(:description), size: 12, style: :bold
-        pdf.text 'Código'
-        pdf.text product.dig(:code), size: 12
-        pdf.move_down 20
-      end
+      header(pdf)
+      footer(pdf)
+      body(pdf, products)
       pdf.render_file('public/products.pdf')
+    end
+  end
+
+  def header(pdf)
+    header = "#{Rails.root.to_s}/public/header_background_pdf.png"
+    pdf.repeat :all do
+      pdf.image header, at: [0, 745], scale: 0.66
+    end
+  end
+
+  def body(pdf, products)
+    products.each do |product| 
+      pdf.image product.image_url, scale: 0.50 if product&.image&.attached?
+      pdf.text product.product_description, size: 12, color: 'FF0000'
+      pdf.text "Cód #{product.product_code.to_s}", size: 12, color: '0C71E0'
+      pdf.move_down 20
+    end
+  end
+
+  def footer(pdf)
+    footer = "#{Rails.root.to_s}/public/footer_background_pdf.png"
+    pdf.repeat :all do
+      pdf.image footer, at: [0, 0], scale: 0.66
     end
   end
 end
