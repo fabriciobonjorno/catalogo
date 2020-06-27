@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :tax_classifications, except: %i[show destroy]
     resources :products, except: %i[show]
     resources :import_products, only: %i[create]
+    resources :export_products, only: %i[create]
     resources :users, except: %i[show]
     resources :lines, except: %i[show destroy]
     resources :subscribers, only: %i[index] do
