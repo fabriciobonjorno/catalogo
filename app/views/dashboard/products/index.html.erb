@@ -19,7 +19,9 @@
       <%= link_to 'Baixar Modelo', '/modelo_produtos.xlsx', download: 'modelo_produtos.xlsx' %>
     </div>
   <% end %>
-  <%= link_to 'Exportar Catalogo', new_dashboard_product_path, class:"btn btn-secondary mb-2" %>
+  <%= form_for :pdf, url: '/dashboard/export_products'  do |f| %>
+    <%= button_to 'Exportar Catalogo', {}, class:"btn btn-secondary mb-2", id: :btn_export_pdf %>
+  <% end %>
   <% if @products.empty? %>
     <div class="alert alert-danger" role="alert">
       Nenhum produto cadastrado!
