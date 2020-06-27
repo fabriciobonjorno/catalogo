@@ -6,6 +6,9 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "datatables.net-bs": "^1.10.21",
+    "datatables.net-responsive-bs": "^2.2.5",
+    "datatables.net-searchpanes-bs": "^1.1.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
   }

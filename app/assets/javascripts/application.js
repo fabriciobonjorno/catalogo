@@ -19,3 +19,6 @@
 //= require turbolinks
 //= require_tree .
 //= require serviceworker-companion
+//= require datatables.net/js/jquery.dataTables.min
+//= require datatables.net-responsive-bs/js/responsive.bootstrap.min
+//= require datatables.net-searchpanes/js/dataTables.searchPanes.min

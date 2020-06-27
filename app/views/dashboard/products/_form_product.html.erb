@@ -70,9 +70,25 @@
     <%= link_to 'Cancelar', dashboard_products_path, class: "btn btn-danger ml-1" %>
   </div>
 <% end %>
-
 <script>
-  document.addEventListener("turbolinks:load", () => {
+  //document.addEventListener("turbolinks:load", () => {
+    $(document).on("turbolinks:load",function(){
+      const groupId =  $( "#product_group_id option:selected" ).val();
+      if (!groupId) {
+        $("#product_family_id option").remove();
+        return;
+      }
+      $.ajax(`/dashboard/families.json?group_id=${groupId}`)
+        .done((families) => {
+          const htmlOptions = families.reduce((options, family) => {
+            options += `<option value='${family.id}'>${family.family_description}</option>`;
+            return options;
+          }, []);
+          $(".dynamic #product_family_id").html(htmlOptions);
+        })
+        .fail((error) => console.error(error));
+  
+    //change option
     $("#product_group_id").change(({ target }) => {
       const groupId = target.value;
       if (!groupId) {
