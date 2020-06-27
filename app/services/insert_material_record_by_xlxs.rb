@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-module GeneratePdfMaterialsRecordByCsv
+module InsertMaterialRecordByCsv
   class << self
-    require './lib/generate_pdf'
     require 'roo'
 
     def execute(file)
@@ -24,7 +23,6 @@ module GeneratePdfMaterialsRecordByCsv
             products << product
           end
         end
-        #TODO: GeneratePdf.material(products)
     end
 
     private

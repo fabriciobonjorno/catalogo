@@ -1,7 +1,7 @@
 module Dashboard
   class ImportProductsController < DashboardController
     def create
-      GeneratePdfMaterialsRecordByCsv.execute(
+      InsertMaterialRecordByCsv.execute(
         import_products_params[:upload]
       )
       redirect_to dashboard_products_path,
