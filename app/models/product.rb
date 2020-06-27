@@ -44,4 +44,8 @@ class Product < ApplicationRecord
   scope :status_dimension, -> { where(status_dimension: true) }
   scope :releases_true, -> { where(releases: true).count }
   scope :status_true, -> { where(status: true).count }
+
+  def image_url
+    url_for(image)
+  end
 end
