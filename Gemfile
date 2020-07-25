@@ -35,6 +35,8 @@ gem 'aws-sdk-s3'
 gem 'cocoon'
 gem 'kaminari'
 gem 'serviceworker-rails'
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -43,7 +45,7 @@ gem 'serviceworker-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'prawn-rails'
+gem 'prawn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
