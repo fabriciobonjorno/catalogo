@@ -5,6 +5,6 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   def default_url_options 
-    { host: "brokermatogrosso.meucatalogo.art.br"} if Rails.env.production?
+    { host: "catalogobrkmt.s3.amazonaws.com"} if Rails.env.production?
   end
 end
