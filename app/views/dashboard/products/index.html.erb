@@ -20,7 +20,7 @@
     </div>
   <% end %>
   <%= form_for :pdf, url: '/dashboard/export_products'  do |f| %>
-    <%= button_to 'Exportar Catalogo', {}, class:"btn btn-secondary mb-2", id: :btn_export_pdf %>
+    <%= button_to 'Exportar Catalogo', {}, class:"btn btn-secondary mb-2" %>
   <% end %>
   <% if @products.empty? %>
     <div class="alert alert-danger" role="alert">
