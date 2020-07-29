@@ -30,7 +30,7 @@ class GeneratePdf < Prawn::Document
     set_title(pdf, products.first)
     products.each do |product|
       pdf.bounding_box([@x, @y], width: 130, height: 800) do
-        pdf.image product.image_url, scale: 0.50 if product&.image&.attached?
+        pdf.image product.image, scale: 0.50 if product&.image&.attached?
         pdf.text product.product_description, size: 12, color: 'FF0000'
         pdf.text "Cód #{product.product_code}", size: 12, color: '0C71E0'
 
