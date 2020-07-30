@@ -57,7 +57,7 @@ class GeneratePdf < Prawn::Document
     @index_x = 0
     @index_y = 0
     @x = 50
-    @y = 520
+    @y = 600
   end
 
   def set_title(pdf, product)
@@ -75,7 +75,7 @@ class GeneratePdf < Prawn::Document
 
   def reset_y(pdf, product)
     @index_y = 0
-    @y = 520
+    @y = 600
     pdf.start_new_page
     set_title(pdf, product)
   end
