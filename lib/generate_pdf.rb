@@ -30,7 +30,7 @@ class GeneratePdf < Prawn::Document
     set_title(pdf, products.first)
     products.each do |product|
       pdf.bounding_box([@x, @y], width: 130, height: 800) do
-        pdf.image StringIO.open(product.image.download), width: 80, height: 100 if product&.image&.attached?
+        pdf.image StringIO.open(product.image.download), width: 80, height: 80 if product&.image&.attached?
         pdf.text product.product_description, size: 12, color: 'FF0000'
         pdf.text "Cód #{product.product_code}", size: 12, color: '0C71E0'
 
@@ -57,7 +57,7 @@ class GeneratePdf < Prawn::Document
     @index_x = 0
     @index_y = 0
     @x = 50
-    @y = 470
+    @y = 520
   end
 
   def set_title(pdf, product)
@@ -75,7 +75,7 @@ class GeneratePdf < Prawn::Document
 
   def reset_y(pdf, product)
     @index_y = 0
-    @y = 470
+    @y = 520
     pdf.start_new_page
     set_title(pdf, product)
   end
