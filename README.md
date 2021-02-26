@@ -2,7 +2,7 @@
 
 # Digital Catalogo
 
-**Description**: This catalog is for online product promotion. This is not an online store.
+**Description**: This catalog is for online product promotion. This is not an online store. <br>
 ** Your PR with improvements will be welcome!
 
 ## Configuration
