@@ -3,7 +3,7 @@
 # Digital Catalogo
 
 **Description**: This catalog is for online product promotion. This is not an online store.
-**Your PR with improvements will be welcome!**
+* **Your PR with improvements will be welcome!**
 
 ## Configuration
 * Ruby Version: 2.6.6
